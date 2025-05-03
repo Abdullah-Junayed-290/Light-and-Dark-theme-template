@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Counter</title>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <style>
+  
+    body {
+      background-color: black;
+      color: white;
+    }
+    
+    div {
+      text-align: center;
+      margin: auto;
+    }
+    
+    button {
+      padding: 1rem;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-radius: 20px;
+      font-size: 15pt;
+    }
+    
+    h1 {
+      font-size: 4rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+  </style>
+  
+</head>
+
+<body>
+  
+  <div 
+    x-data="{ count: 0, 
+      increase() {
+        let increasedValue = ++this.count;
+        console.log(increasedValue);
+      }, 
+      decrease() {
+       let decreasedValue = --this.count;
+       console.log(decreasedValue);
+      }
+    }"
+  >
+    
+    <h1>
+      Count: <strong x-text="count"></strong>
+    </h1>
+    
+    <button @click="increase()">increaser</button>
+    
+    <button @click="decrease()">decreaser</button>
+    
+  </div>
+  
+  
+</body>
+
+</html>
